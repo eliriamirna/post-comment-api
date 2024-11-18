@@ -1,0 +1,9 @@
+services:
+  postgres:
+    container_name: post-comment
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+    ports:
+      - 5432:5432
