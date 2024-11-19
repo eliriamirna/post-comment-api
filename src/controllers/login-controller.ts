@@ -32,7 +32,12 @@ export default class LoginController {
 				})
 			}
 
-			const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET || '', {
+			const token = jwt.sign({ 
+				id: user.id,
+				name: user.name, 
+				email: user.email, 
+			}, process.env.JWT_SECRET || '', 
+			{
 				expiresIn: '1h'
 			})
 		
