@@ -59,13 +59,12 @@ Este projeto implementa a API para um sistema de postagens e comentários, com f
 
     ```
     PORTA=5000
-PG_USER=postgres
-PG_PASSWORD=postgres
-PG_HOST=localhost
-PG_PORT=5432
-PG_DATABASE=posts_comment_db
-
-JWT_SECRET=9f3b8b8a56970c9c2e5bdf9c8f4a5e7f77f34d6e3bd9a733cb9fef3b7e89f622f52e1db9ebec0b3c8f9e3a9c96f0323a0567bfaad5a93e4b9277be287b7e1bcd
+    PG_USER=postgres
+    PG_PASSWORD=postgres
+    PG_HOST=localhost
+    PG_PORT=5432
+    PG_DATABASE=posts_comment_db
+    JWT_SECRET=9f3b8b8a56970c9c2e5bdf9c8f4a5e7f77f34d6e3bd9a733cb9fef3b7e89f622f52e1db9ebec0b3c8f9e3a9c96f0323a0567bfaad5a93e4b9277be287b7e1bcd
     ```
 
 4. Execute o Docker Compose para iniciar o banco de dados:
