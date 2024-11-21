@@ -80,10 +80,10 @@ export default class UserController {
 
     async update(req: Request, res: Response) {
         const { id } = req.params;
-        const { name, email, password } = req.body;
+        const { name, email } = req.body;
         const userId = req.user_id;
 
-        if (!name || !email || !password) {
+        if (!name || !email) {
             return res.status(400).json({
                 mensagem: 'Todos os campos são obrigatórios'
             });
@@ -106,8 +106,7 @@ export default class UserController {
                 });
             }
 
-            const encryptedPassword = await bcrypt.hash(password, 10);
-            const updatedUser = await userRepository.update(Number(id), { name, email, password: encryptedPassword });
+            const updatedUser = await userRepository.update(Number(id), { name, email });
 
             return res.json({
                 user: updatedUser,

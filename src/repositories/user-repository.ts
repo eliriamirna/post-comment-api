@@ -22,11 +22,11 @@ export default class UserRepository {
     async update(id: number, props: TUser) {
         const query = `
             UPDATE users 
-            SET name = $1, email = $2, password = $3
-            WHERE id = $4
+            SET name = $1, email = $2
+            WHERE id = $3
             RETURNING id, name, email
         `;
-        const result = await pool.query(query, [props.name, props.email, props.password, id]);
+        const result = await pool.query(query, [props.name, props.email, id]);
         const userUpdated = result.rows[0];
         return userUpdated;
     }

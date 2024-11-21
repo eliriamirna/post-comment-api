@@ -12,7 +12,8 @@ export default class UploadController {
             }
 
             const fileName = file.filename; 
-            const filePath = path.join('public/uploads', file.filename);
+            const filePath = path.posix.join('public', 'uploads', file.filename);
+
 
             const postId = req.body.post_id;
 
@@ -26,7 +27,7 @@ export default class UploadController {
 
             return res.status(200).json({
                 message: 'Arquivo enviado com sucesso',
-                filePath,
+                filePath: `/uploads/${file.filename}`,
                 fileName,
                 post: postUpdated,
             });
